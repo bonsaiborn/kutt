@@ -14,7 +14,7 @@ async function homepage(req, res) {
     return;
   }
   res.render("homepage", {
-    title: "Free modern URL shortener",
+    title: "URL saīsinātājs",
   });
 }
 
@@ -25,14 +25,14 @@ async function login(req, res) {
   }
   
   res.render("login", {
-    title: "Log in or sign up"
+    title: "Pieslēgties vai reģistrēties"
   });
 }
 
 function logout(req, res) {
   utils.deleteCurrentToken(res);
   res.render("logout", {
-    title: "Logging out.."
+    title: "Notiek izrakstīšanās..."
   });
 }
 
@@ -43,37 +43,37 @@ async function createAdmin(req, res) {
     return;
   }
   res.render("create_admin", {
-    title: "Create admin account"
+    title: "Izveidot administratora kontu"
   });
 }
 
 function notFound(req, res) {
   res.render("404", {
-    title: "404 - Not found"
+    title: "404 - Lapa nav atrasta"
   });
 }
 
 function settings(req, res) {
   res.render("settings", {
-    title: "Settings"
+    title: "Iestatījumi"
   });
 }
 
 function admin(req, res) {
   res.render("admin", {
-    title: "Admin"
+    title: "Administrēšana"
   });
 }
 
 function stats(req, res) {
   res.render("stats", {
-    title: "Stats"
+    title: "Statistika"
   });
 }
 
 async function banned(req, res) {
   res.render("banned", {
-    title: "Banned link",
+    title: "Bloķēta saite",
   });
 }
 
@@ -83,13 +83,13 @@ async function report(req, res) {
     return;
   }
   res.render("report", {
-    title: "Report abuse",
+    title: "Ziņot par pārkāpumu",
   });
 }
 
 async function resetPassword(req, res) {
   res.render("reset_password", {
-    title: "Reset password",
+    title: "Atiestatīt paroli",
   });
 }
 
@@ -110,26 +110,26 @@ async function resetPasswordSetNewPassword(req, res) {
 
   
   res.render("reset_password_set_new_password", {
-    title: "Reset password",
+    title: "Atiestatīt paroli",
     ...(res.locals.token_verified && { reset_password_token }),
   });
 }
 
 async function verifyChangeEmail(req, res) {
   res.render("verify_change_email", {
-    title: "Verifying email",
+    title: "E-pasta pārbaude",
   });
 }
 
 async function verify(req, res) {
   res.render("verify", {
-    title: "Verify",
+    title: "Pārbaudīt",
   });
 }
 
 async function terms(req, res) {
   res.render("terms", {
-    title: "Terms of Service",
+    title: "Lietošanas noteikumi",
   });
 }
 
@@ -147,7 +147,7 @@ async function confirmLinkDelete(req, res) {
   if (!link) {
     return res.render("partials/links/dialog/message", {
       layout: false,
-      message: "Could not find the link."
+      message: "Saiti neizdevās atrast."
     });
   }
   res.render("partials/links/dialog/delete", {
@@ -164,7 +164,7 @@ async function confirmLinkBan(req, res) {
   });
   if (!link) {
     return res.render("partials/links/dialog/message", {
-      message: "Could not find the link."
+      message: "Saiti neizdevās atrast."
     });
   }
   res.render("partials/links/dialog/ban", {
@@ -178,7 +178,7 @@ async function confirmUserDelete(req, res) {
   if (!user) {
     return res.render("partials/admin/dialog/message", {
       layout: false,
-      message: "Could not find the user."
+      message: "Lietotāju neizdevās atrast."
     });
   }
   res.render("partials/admin/dialog/delete_user", {
@@ -193,7 +193,7 @@ async function confirmUserBan(req, res) {
   if (!user) {
     return res.render("partials/admin/dialog/message", {
       layout: false,
-      message: "Could not find the user."
+      message: "Lietotāju neizdevās atrast."
     });
   }
   res.render("partials/admin/dialog/ban_user", {
@@ -225,7 +225,7 @@ async function confirmDomainDelete(req, res) {
     user_id: req.user.id
   });
   if (!domain) {
-    throw new utils.CustomError("Could not find the domain.", 400);
+    throw new utils.CustomError("Domēnu neizdevās atrast.", 400);
   }
   res.render("partials/settings/domain/delete", {
     ...utils.sanitize.domain(domain)
@@ -237,7 +237,7 @@ async function confirmDomainBan(req, res) {
     id: req.query.id
   });
   if (!domain) {
-    throw new utils.CustomError("Could not find the domain.", 400);
+    throw new utils.CustomError("Domēnu neizdevās atrast.", 400);
   }
   const hasUser = !!domain.user_id;
   const hasLink = await query.link.find({ domain_id: domain.id });
@@ -254,7 +254,7 @@ async function confirmDomainDeleteAdmin(req, res) {
     id: req.query.id
   });
   if (!domain) {
-    throw new utils.CustomError("Could not find the domain.", 400);
+    throw new utils.CustomError("Domēnu neizdevās atrast.", 400);
   }
   const hasLink = await query.link.find({ domain_id: domain.id });
   res.render("partials/admin/dialog/delete_domain", {
@@ -266,7 +266,7 @@ async function confirmDomainDeleteAdmin(req, res) {
 
 async function getReportEmail(req, res) {
   if (!env.REPORT_EMAIL) {
-    throw new utils.CustomError("No report email is available.", 400);
+    throw new utils.CustomError("Ziņošanas e-pasts nav pieejams.", 400);
   }
   res.render("partials/report/email", {
     report_email_address: env.REPORT_EMAIL.replace("@", "[at]")
@@ -275,7 +275,7 @@ async function getReportEmail(req, res) {
 
 async function getSupportEmail(req, res) {
   if (!env.CONTACT_EMAIL) {
-    throw new utils.CustomError("No support email is available.", 400);
+    throw new utils.CustomError("Atbalsta e-pasts nav pieejams.", 400);
   }
   await utils.sleep(500);
   res.render("partials/support_email", {

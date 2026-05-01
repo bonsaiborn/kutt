@@ -1,28 +1,28 @@
 <div class="content">
-  <h2>Ban link?</h2>
+  <h2>Bloķēt saiti?</h2>
   <p>
-    Are you sure do you want to ban the link &quot;<b>{{link}}</b>&quot;?
+    Vai tiešām vēlies bloķēt saiti &quot;<b>{{link}}</b>&quot;?
   </p>
   <div class="ban-checklist">
     <label class="checkbox">
       <input id="user" name="user" type="checkbox" />
-      User
+      Lietotājs
     </label>
     <label class="checkbox">
       <input id="userLinks" name="userLinks" type="checkbox" />
-      User links
+      Lietotāja saites
     </label>
     <label class="checkbox">
       <input id="host" name="host" type="checkbox" />
-      Host
+      Hosts
     </label>
     <label class="checkbox">
       <input id="domain" name="domain" type="checkbox" />
-      Domain
+      Domēns
     </label>
   </div>
   <div class="buttons">
-    <button type="button" hx-on:click="closeDialog()">Cancel</button>
+    <button type="button" hx-on:click="closeDialog()">Atcelt</button>
     <button 
       type="button"
       class="danger confirm" 
@@ -38,7 +38,7 @@
       <span class="stop">
         {{> icons/stop}}
       </span>
-      Ban
+      Bloķēt
     </button>
     {{> icons/spinner}}
   </div>

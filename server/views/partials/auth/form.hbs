@@ -1,24 +1,24 @@
 <form id="login-signup" hx-post="/api/auth/login" hx-swap="outerHTML">
   {{#unless disallow_login_form}}
     <label class="{{#if errors.email}}error{{/if}}">
-      Email address:
+      Lietotājvārds:
       <input
         name="email"
         id="email"
         type="email"
         autofocus="true"
-        placeholder="Email address..."
+        placeholder="Lietotājvārds..."
         hx-preserve="true"
       />
       {{#if errors.email}}<p class="error">{{errors.email}}</p>{{/if}}
     </label>
     <label class="{{#if errors.password}}error{{/if}}">
-      Password:
+      Parole:
       <input
         name="password"
         id="password"
         type="password"
-        placeholder="Password..."
+        placeholder="Parole..."
         hx-preserve="true"
       />
       {{#if errors.password}}<p class="error">{{errors.password}}</p>{{/if}}
@@ -30,7 +30,7 @@
       >
         <span>{{> icons/login}}</span>
         <span>{{> icons/spinner}}</span>
-        Log in
+        Pieslēgties
       </button>
       {{#unless disallow_registration}}
         {{#if mail_enabled}}
@@ -48,7 +48,7 @@
           >
               <span>{{> icons/new_user}}</span>
               <span>{{> icons/spinner}}</span>
-              Sign up
+              Reģistrēties
           </button>
         {{/if}}
       {{/unless}}
@@ -58,13 +58,13 @@
     <div class="buttons-wrapper">
       <a class="button secondary full" href="/login/oidc" title="Login with OIDC">
         <span>{{> icons/key}}</span>
-        Login with OIDC
+        Pieslēgties ar OIDC
       </a>
     </div>
   {{/if}}
   {{#unless disallow_login_form}}
     {{#if mail_enabled}}
-      <a class="forgot-password" href="/reset-password" title="Reset password">Forgot your password?</a>
+      <a class="forgot-password" href="/reset-password" title="Atiestatīt paroli">Aizmirsi paroli?</a>
     {{/if}}
   {{/unless}}
   {{#unless errors}}

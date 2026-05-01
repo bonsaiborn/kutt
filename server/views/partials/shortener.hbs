@@ -21,7 +21,7 @@
       </h1>
     {{/if}}
     {{#unless link}}
-        <h1>Cut your links <span>shorter</span>.</h1>
+        <h1>Padari savas saites <span>īsākas</span>.</h1>
     {{/unless}}
   </div>
   <form 
@@ -37,7 +37,7 @@
         id="target"
         name="target"
         type="text"
-        placeholder="Paste your long URL"
+        placeholder="Ielīmē garo URL"
         aria-label="target"
         autofocus="true"
         data-lpignore="true"
@@ -61,12 +61,12 @@
         hx-on:change="htmx.toggleClass('#advanced-options', 'hidden')"
         {{#if show_advanced}}checked="true"{{/if}}
       />
-      Show advanced options
+      Rādīt papildu opcijas
     </label>
     <section id="advanced-options" class="{{#unless show_advanced}}hidden{{/unless}}">
       <div class="advanced-input-wrapper">
         <label class="{{#if errors.domain}}error{{/if}}">
-          Domain:
+          Domēns:
           <select 
             id="domain" 
             name="domain" 
@@ -90,19 +90,19 @@
             type="text" 
             id="customurl" 
             name="customurl" 
-            placeholder="Custom address..." 
+            placeholder="Pielāgota adrese..." 
             hx-preserve="true"
             autocomplete="off" 
           />
           {{#if errors.customurl}}<p class="error">{{errors.customurl}}</p>{{/if}}
         </label>
         <label class="{{#if errors.password}}error{{/if}}">
-          Password:
+          Parole:
           <input 
             type="password" 
             id="password" 
             name="password" 
-            placeholder="Password..." 
+            placeholder="Parole..." 
             hx-preserve="true" 
             autocomplete="new-password"
           />
@@ -111,7 +111,7 @@
       </div>
       <div class="advanced-input-wrapper">
         <label class="expire-in {{#if errors.expire_in}}error{{/if}}">
-          Expire in:
+          Derīga vēl:
           <input 
             type="text" 
             id="expire_in" 
@@ -122,12 +122,12 @@
           {{#if errors.expire_in}}<p class="error">{{errors.expire_in}}</p>{{/if}}
         </label>
         <label class="description {{#if errors.description}}error{{/if}}">
-          Description:
+          Apraksts:
           <input 
             type="text" 
             id="description" 
             name="description" 
-            placeholder="Description..." 
+            placeholder="Apraksts..." 
             hx-preserve="true" 
           />
           {{#if errors.description}}<p class="error">{{errors.description}}</p>{{/if}}

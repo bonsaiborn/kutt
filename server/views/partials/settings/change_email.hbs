@@ -1,8 +1,8 @@
 <section id="change-email-wrapper">
   <h2>
-    Change email
+    Mainīt e-pastu
   </h2>
-  <p>Enter your password and a new email address to change your email address.</p>
+  <p>Ievadi savu paroli un jauno e-pasta adresi, lai mainītu e-pasta adresi.</p>
   <form 
     id="change-email"
     hx-post="/api/auth/change-email"
@@ -12,18 +12,18 @@
   >
     <div class="inputs">
       <label class="{{#if errors.password}}error{{/if}}">
-        Passwod:
+        Parole:
         <input 
           id="password-for-change-email" 
           name="password" 
           type="password" 
-          placeholder="Password..."
+          placeholder="Parole..."
           hx-preserve="true"
         />
         {{#if errors.password}}<p class="error">{{errors.password}}</p>{{/if}}
       </label>
       <label class="{{#if errors.email}}error{{/if}}">
-        New email address:
+        Jaunā e-pasta adrese:
         <input 
           id="email-for-change-email" 
           name="email" 
@@ -37,7 +37,7 @@
     <button type="submit" class="primary">
       <span>{{> icons/reload}}</span>
       <span>{{> icons/spinner}}</span>
-      Update
+      Atjaunināt
     </button>
     {{#if error}}
       {{#unless errors}}

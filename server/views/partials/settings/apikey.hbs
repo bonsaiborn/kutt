@@ -1,11 +1,11 @@
 <section id="apikey-wrapper">
   <h2>API</h2>
   <p>
-    In additional to this website, you can use the API to create, delete and
-    get shortened URLs. If you're not familiar with API, don't generate the key. 
-    DO NOT share this key on the client side of your website. 
-    <a href="https://docs.kutt.it" title="API Docs" target="_blank">
-      Read API docs.
+    Papildus šai vietnei vari izmantot API, lai izveidotu, dzēstu un
+    iegūtu saīsinātos URL. Ja nezini, kā darbojas API, neģenerē atslēgu. 
+    NEKOPĪGO šo atslēgu savas vietnes klienta pusē. 
+    <a href="https://docs.kutt.it" title="API dokumentācija" target="_blank">
+      Lasīt API dokumentāciju.
     </a>
   </p>
   <div id="apikey">
@@ -13,7 +13,7 @@
       <div class="clipboard small">
         <button 
           type="button"
-          aria-label="Copy" 
+          aria-label="Kopēt" 
           hx-on:click="handleShortURLCopyLink(this);" 
           data-url="{{user.apikey}}"
         >

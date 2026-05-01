@@ -1,7 +1,7 @@
 <tr class="category">
   <th class="category-total">
     <p id="category-total">
-      Total {{title}}: <b>{{#if total includeZero=true}}{{total_formatted}}{{else}}-{{/if}}</b>
+      Kopā {{title}}: <b>{{#if total includeZero=true}}{{total_formatted}}{{else}}-{{/if}}</b>
     </p>
   </th>
   <th class="category-tab">
@@ -16,12 +16,12 @@
         hx-sync="this:replace"
         hx-indicator="closest table"
         onclick="setTab(event)"
-        {{#ifEquals title 'links'}}
+        {{#ifEquals title 'saites'}}
           class="active"
           hx-on:htmx:before-request="event.preventDefault()"
         {{/ifEquals}}
       >
-        Links
+        Saites
       </a>
       <a 
         id="tab-users" 
@@ -33,12 +33,12 @@
         hx-sync="this:replace"
         hx-indicator="closest table"
         onclick="setTab(event)"
-        {{#ifEquals title 'users'}}
+        {{#ifEquals title 'lietotāji'}}
           class="active"
           hx-on:htmx:before-request="event.preventDefault()"
         {{/ifEquals}}
       >
-        Users
+        Lietotāji
       </a>
        <a 
         id="tab-domains" 
@@ -50,12 +50,12 @@
         hx-sync="this:replace"
         hx-indicator="closest table"
         onclick="setTab(event)"
-        {{#ifEquals title 'domains'}}
+        {{#ifEquals title 'domēni'}}
           class="active"
           hx-on:htmx:before-request="event.preventDefault()"
         {{/ifEquals}}
       >
-        Domains
+        Domēni
       </a>
     </nav>
   </th>

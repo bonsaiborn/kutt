@@ -1,10 +1,10 @@
 {
-  "name": "Kutt",
-  "short_name": "Kutt",
+  "name": "astkh.cc",
+  "short_name": "astkh.cc",
   "theme_color": "#f3f3f3",
   "background_color": "#f3f3f3",
   "display": "standalone",
-  "description": "Kutt.it is a free and open source URL shortener with custom domains and stats.",
+  "description": "astkh.cc | URL shortener",
   "Scope": "/",
   "start_url": "/",
   "icons": [
@@ -44,9 +44,23 @@
       "type": "image/png"
     },
     {
-      "src": "images/icons/icon-512x512.png",
+      "src": "images/favicon.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+        "src": "images/card.png",
+        "sizes": "1280x640",
+        "type": "image/png",
+        "form_factor": "wide"
+    },
+    {
+        "src": "images/card-mobile.png",
+        "sizes": "640x684",
+        "type": "image/png"
     }
   ],
   "splash_pages": null

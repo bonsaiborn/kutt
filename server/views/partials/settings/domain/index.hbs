@@ -1,33 +1,33 @@
 <h2>
-  Custom domain
+  Pielāgots domēns
 </h2>
 <p>
-  You can set a custom domain for your short URLs, so instead of
-  <b>{{default_domain}}/shorturl</b> you can have
-  <b>yoursite.com/shorturl.</b>
+  Vari iestatīt pielāgotu domēnu saviem saīsinātajiem URL, lai
+  <b>{{default_domain}}/shorturl</b> vietā varētu izmantot
+  <b>saite.lv/shorturl.</b>
 </p>
 
 {{#if server_cname_address}}
   <p>
-    Point your domain's A record to 
+    Norādi sava domēna A ierakstu uz 
     {{#if server_ip_address}}
       <b>{{server_ip_address}}</b>
     {{else}}
-      our <b>IP address</b>
-    {{/if}} or your subdomain's CNAME record to
-    <b>{{server_cname_address}}</b>. If you're using <b>Cloudflare</b>,
-    make sure to use <b>DNS only</b> mode for your subdomain.
+      mūsu <b>IP adresi</b>
+    {{/if}} vai sava apakšdomēna CNAME ierakstu uz
+    <b>{{server_cname_address}}</b>. Ja izmanto <b>Cloudflare</b>,
+    pārliecinies, ka apakšdomēnam ir ieslēgts <b>DNS only</b> režīms.
   </p>
-  <p>Then, add the domain via the form below:</p>
+  <p>Pēc tam pievieno domēnu, izmantojot zemāk esošo formu:</p>
 {{else}}
   <p>
-    Point your domain's A record to 
+    Norādi sava domēna A ierakstu uz 
     {{#if server_ip_address}}
       <b>{{server_ip_address}}</b>
     {{else}}
-      our <b>IP address</b>
+      mūsu <b>IP adresi</b>
     {{/if}} 
-    then add the domain via the form below:
+    pēc tam pievieno domēnu, izmantojot zemāk esošo formu:
   </p>
 {{/if}}
 
@@ -43,7 +43,7 @@
     hx-on::after-request="event.srcElement.classList.add('hidden')"
   >
     <span>{{> icons/plus}}</span>
-    Add domain
+    Pievienot domēnu
   </button>
   {{> icons/spinner}}
   <div id="domain-form-wrapper">
