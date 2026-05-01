@@ -1,5 +1,5 @@
 <div class="content admin-create">
-  <h2>Add domain</h2>
+  <h2>Pievienot domēnu</h2>
   <form
     id="add-domain-form"
     hx-post="/api/domains/admin" 
@@ -8,23 +8,23 @@
     hx-indicator="closest .content"
   >
     <label class="{{#if errors.address}}error{{/if}}">
-      Address:
+      Adrese:
       <input
         name="address"
         id="add-domain-address"
         type="text"
-        placeholder="Address..."
+        placeholder="Adrese..."
         hx-preserve="true"
       />
       {{#if errors.address}}<p class="error">{{errors.address}}</p>{{/if}}
     </label>
     <label class="{{#if errors.homepage}}error{{/if}}">
-      Homepage (optional):
+      Sākumlapa (nav obligāti):
       <input
         name="homepage"
         id="add-domain-homepage"
         type="text"
-        placeholder="Homepage address.."
+        placeholder="Sākumlapas adrese..."
         hx-preserve="true"
       />
       {{#if errors.homepage}}<p class="error">{{errors.homepage}}</p>{{/if}}
@@ -37,13 +37,13 @@
         onchange="canSendVerificationEmail();" 
         hx-preserve="true"
       />
-      Banned
+      Bloķēts
     </label>
     <div class="buttons">
-      <button type="button" hx-on:click="closeDialog()">Cancel</button>
+      <button type="button" hx-on:click="closeDialog()">Atcelt</button>
       <button type="submit" class="primary">
         <span>{{> icons/plus}}</span>
-        Add
+        Pievienot
       </button>
       {{> icons/spinner}}
     </div>

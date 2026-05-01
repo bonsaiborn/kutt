@@ -1,5 +1,5 @@
 <div class="content create-user">
-  <h2>Create user</h2>
+  <h2>Izveidot lietotāju</h2>
   <form
     id="create-user-form"
     hx-post="/api/users/admin" 
@@ -8,32 +8,32 @@
     hx-indicator="closest .content"
   >
     <label class="{{#if errors.email}}error{{/if}}">
-      Email address:
+      E-pasta adrese:
       <input
         name="email"
         id="create-user-email"
         type="email"
-        placeholder="Email address..."
+        placeholder="E-pasta adrese..."
         hx-preserve="true"
       />
       {{#if errors.email}}<p class="error">{{errors.email}}</p>{{/if}}
     </label>
     <label class="{{#if errors.password}}error{{/if}}">
-      Password:
+      Parole:
       <input
         name="password"
         id="create-user-password"
         type="password"
-        placeholder="Password..."
+        placeholder="Parole..."
         hx-preserve="true"
         autocomplete="new-password"
       />
       {{#if errors.password}}<p class="error">{{errors.password}}</p>{{/if}}
     </label>
     <label class="{{#if errors.role}}error{{/if}}">
-      Role:
+      Loma:
       <select name="role" id="create-user-role" hx-preserve="true">
-        <option value="USER" selected>User</option>
+        <option value="USER" selected>Lietotājs</option>
         <option value="ADMIN">Admin</option>
       </select>
       {{#if errors.role}}<p class="error">{{errors.role}}</p>{{/if}}
@@ -48,7 +48,7 @@
           hx-preserve="true"
           checked
         />
-        Verified
+        Verificēts
       </label>
       <label class="checkbox">
         <input 
@@ -58,18 +58,18 @@
           onchange="canSendVerificationEmail();" 
           hx-preserve="true"
         />
-        Banned
+        Bloķēts
       </label>
     </div>
     <label id="send-email-label" class="checkbox hidden" hx-preserve="true">
       <input id="create-user-send-email" name="verification_email" type="checkbox" />
-      Send verification email
+      Nosūtīt verifikācijas e-pastu
     </label>
     <div class="buttons">
-      <button type="button" hx-on:click="closeDialog()">Cancel</button>
+      <button type="button" hx-on:click="closeDialog()">Atcelt</button>
       <button type="submit" class="primary">
         <span>{{> icons/new_user}}</span>
-        Create
+        Izveidot
       </button>
       {{> icons/spinner}}
     </div>

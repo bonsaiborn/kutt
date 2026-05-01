@@ -8,7 +8,9 @@
     "start": "node server/server.js --production",
     "migrate": "knex migrate:latest",
     "migrate:make": "knex migrate:make",
-    "docs:build": "cd docs/api && node generate && cd ../.."
+    "docs:build": "cd docs/api && node generate && cd ../..",
+    "build": "docker build -t kutt:test .",
+    "test": "docker run -p 3003:3000 -e JWT_SECRET=test_secret_123 -e DEFAULT_DOMAIN=localhost:3003 -e DB_FILENAME=/var/lib/kutt/data.sqlite kutt:test"
   },
   "repository": {
     "type": "git",

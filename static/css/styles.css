@@ -1,9 +1,9 @@
-@font-face {
-  font-family: 'Nunito';
+/* @font-face {
+  font-family: "Nunito";
   font-style: normal;
   font-weight: 200 1000;
   src: url(/fonts/nunito-variable.woff2) format('woff2');
-}
+} */
 
 :root {
   --bg-color: hsl(206, 12%, 95%);
@@ -69,7 +69,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
-  font: 16px/1.45 'Nunito', sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.5;
   overflow-x: hidden;
   color: var(--text-color);
 }
